@@ -101,12 +101,13 @@ image: https://source.unsplash.com/collection/94734566/1920x1080
 - **APM**：分布式系统的应用性能监控
 
 ---
-
+layout: two-cols
+---
 # Kibana 入门
 
 使用 Kibana 的基本步骤：
 
-```mermaid {scale: 0.7}
+```mermaid {scale: 0.6}
 graph TD
 A[安装 Elasticsearch] --> B[安装 Kibana]
 B --> C[启动 Elasticsearch]
@@ -115,6 +116,7 @@ D --> E[访问 Kibana Web 界面]
 E --> F[配置索引模式]
 F --> G[探索和可视化数据]
 ```
+::right::
 
 1. 安装 Elasticsearch 和 Kibana（可以通过 Docker、包管理器或手动安装）
 2. 启动两个服务（确保在启动 Kibana 之前 Elasticsearch 已运行）
@@ -227,10 +229,17 @@ Lens 是 Kibana 的拖放界面，用于创建可视化
 
 </div>
 <div>
+<SlidevVideo v-click autoplay controls>
+  <!-- Anything that can go in an HTML video element. -->
+  <source src="https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt034e1f94972746c4/5fa31f08bfc5dd7188659497/video-kibana-lens-bar-tree-710.mp4" type="video/mp4" />
+  <p>
+    你的浏览器不支持播放该视频，请点击
+    <a href="https://assets.contentstack.io/v3/assets/bltefdd0b53724fa2ce/blt034e1f94972746c4/5fa31f08bfc5dd7188659497/video-kibana-lens-bar-tree-710.mp4">此处</a>
+    下载。
+  </p>
+</SlidevVideo>
 
-<img border="rounded" src="https://www.elastic.co/guide/en/kibana/current/images/lens-drag-drop.gif">
-
-Lens 简化了创建可视化的过程，使各种技能水平的用户都能轻松使用。
+<a href="https://www.elastic.co/cn/kibana/kibana-lens" target="_blank">Lens</a> 简化了创建可视化的过程，使各种技能水平的用户都能轻松使用。
 
 </div>
 </div>
@@ -275,12 +284,13 @@ Lens 简化了创建可视化的过程，使各种技能水平的用户都能轻
 </div>
 
 ---
-
+layout: image-right
+image: https://www.elastic.co/guide/en/kibana/master/images/dashboard-overview.png
+backgroundSize: contain
+---
 # Kibana 仪表板：概述
 
 将可视化组合成强大的交互式仪表板
-
-<div grid="~ cols-2 gap-2" m="-t-2">
 
 功能：
 - 组合相关可视化
@@ -291,10 +301,6 @@ Lens 简化了创建可视化的过程，使各种技能水平的用户都能轻
 - 导出为 PDF 或 PNG
 - 设置自动刷新间隔
 
-<img border="rounded" src="https://www.elastic.co/guide/en/kibana/current/images/dashboard-create-new.png">
-
-</div>
-
 仪表板允许您创建数据的全面视图，将多个可视化和搜索组合到一个交互式面板中。
 
 ---
@@ -303,22 +309,35 @@ Lens 简化了创建可视化的过程，使各种技能水平的用户都能轻
 
 构建有效仪表板的步骤指南
 
-1. 导航到 Kibana 中的 Dashboard 页面
-2. 点击"创建仪表板"或"+"按钮
-3. 添加可视化：
-   - 点击"添加"并选择已保存的可视化
-   - 或直接从仪表板创建新的可视化
-4. 排列和调整面板大小：
-   - 拖放重新定位
-   - 使用角落手柄调整大小
-5. 设置仪表板属性：
-   - 时间范围
-   - 过滤器
-   - 刷新间隔
-6. 自定义面板选项：
-   - 编辑可视化设置
-   - 设置面板标题
-7. 保存并共享仪表板
+<div grid="~ cols-2 gap-4">
+   <div>
+
+      1. 导航到 Kibana 中的 Dashboard 页面
+
+      2. 点击"创建仪表板"或"+"按钮
+
+      3. 添加可视化：
+         - 点击"添加"并选择已保存的可视化
+         - 或直接从仪表板创建新的可视化
+
+      4. 排列和调整面板大小：
+         - 拖放重新定位
+         - 使用角落手柄调整大小
+   </div>
+   <div>
+
+      5. 设置仪表板属性：
+         - 时间范围
+         - 过滤器
+         - 刷新间隔
+
+      6. 自定义面板选项：
+         - 编辑可视化设置
+         - 设置面板标题
+
+      7. 保存并共享仪表板
+   </div>
+</div>
 
 ---
 
@@ -327,36 +346,36 @@ Lens 简化了创建可视化的过程，使各种技能水平的用户都能轻
 通过交互元素增强用户体验
 
 <div grid="~ cols-2 gap-4">
-<div>
+   <div>
 
-1. **全局过滤器**
-   - 在所有可视化中应用过滤器
-   - 使用 KQL（Kibana 查询语言）进行复杂过滤
+   1. **全局过滤器**
+      - 在所有可视化中应用过滤器
+      - 使用 KQL（Kibana 查询语言）进行复杂过滤
 
-2. **时间范围选择器**
-   - 为基于时间的数据设置全局时间范围
-   - 使用相对或绝对时间范围
+   2. **时间范围选择器**
+      - 为基于时间的数据设置全局时间范围
+      - 使用相对或绝对时间范围
 
-3. **面板过滤器**
-   - 对特定可视化应用过滤器
-   - 用于比较数据子集
+   3. **面板过滤器**
+      - 对特定可视化应用过滤器
+      - 用于比较数据子集
 
-</div>
-<div>
+   </div>
+   <div>
 
-4. **下钻**
-   - 在仪表板或可视化之间创建链接
-   - 使用户能够更详细地探索数据
+   4. **下钻**
+      - 在仪表板或可视化之间创建链接
+      - 使用户能够更详细地探索数据
 
-5. **已保存的搜索**
-   - 在仪表板中包含 Discover 页面搜索
-   - 将原始数据与可视化结合
+   5. **已保存的搜索**
+      - 在仪表板中包含 Discover 页面搜索
+      - 将原始数据与可视化结合
 
-6. **动态控件**
-   - 添加输入控件以进行用户驱动的过滤
-   - 创建下拉菜单、滑块或文本输入
+   6. **动态控件**
+      - 添加输入控件以进行用户驱动的过滤
+      - 创建下拉菜单、滑块或文本输入
 
-</div>
+   </div>
 </div>
 
 ---
@@ -458,36 +477,40 @@ Kibana 用途广泛，可用于各种场景：
 
 Kibana 为高级用户提供高级功能：
 
-- **机器学习**
-  - 时间序列数据中的异常检测
-  - 预测未来趋势
-  - 离群值检测和分类
+<div grid="~ cols-2 gap-4">
+   <div>
 
-- **图形探索**
-  - 分析数据中的关系
-  - 发现模式和连接
+   - **机器学习**
+      - 时间序列数据中的异常检测
+      - 预测未来趋势
+      - 离群值检测和分类
 
-- **Elastic Maps**
-  - 地理空间分析和可视化
-  - 支持多个地图图层
+   - **图形探索**
+      - 分析数据中的关系
+      - 发现模式和连接
 
-- **警报**
-  - 根据您的数据设置警报
-  - 与各种通知渠道集成
+   - **Elastic Maps**
+      - 地理空间分析和可视化
+      - 支持多个地图图层
+   </div>
+   <div>
 
-- **报告**
-  - 生成和共享 PDF 报告
-  - 安排自动报告生成
+   - **警报**
+        - 根据您的数据设置警报
+        - 与各种通知渠道集成
 
-- **空间**
-  - 组织仪表板和可视化
-  - 实现多租户设置
+   - **报告**
+      - 生成和共享 PDF 报告
+      - 安排自动报告生成
 
-- **Canvas**
-  - 创建信息图表风格的演示
-  - 设计像素完美的报告
+   - **空间**
+      - 组织仪表板和可视化
+      - 实现多租户设置
 
-这些功能可以实现更深入的洞察和更复杂的数据分析。
+   这些功能可以实现更深入的洞察和更复杂的数据分析。
+   </div>
+</div>
+
 
 ---
 
